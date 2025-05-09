@@ -34,6 +34,18 @@ return [
     */
 
     'connections' => [
+        'oracle' => [
+            'driver' => 'oracle',
+             'tns' => env('DB_TNS', ''),
+             'host' => env('DB_HOST', 'localhost'),
+             'port' => env('DB_PORT', '1521'),
+             'database' => env('DB_DATABASE', 'xe'),
+             'username' => env('DB_USERNAME', 'C##databasepenjualanbajuthrift'),
+             'password' => env('DB_PASSWORD', '0707'),
+             'charset' => 'AL32UTF8',
+             'prefix' => '',
+            'prefix_schema' => env('DB_SCHEMA_PREFIX', ''),
+         ],
 
         'sqlite' => [
             'driver' => 'sqlite',

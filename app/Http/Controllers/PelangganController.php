@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\PelangganModel;
+use App\Models\Pelanggan;
 
 class PelangganController extends Controller
 {
     public function index()
     {
-        $pelanggan = PelangganModel::all();
+        $pelanggan = Pelanggan::all();
         return view('pelanggan.index', compact('pelanggan'));
     }
 
     public function show($id)
     {
-        $data = PelangganModel::find($id);
+        $data = Pelanggan::find($id);
         return view('pelanggan.show', compact('data'));
     }
 
@@ -32,7 +32,7 @@ class PelangganController extends Controller
 
     public function edit($id)
     {
-        $data = PelangganModel::find($id);
+        $data = Pelanggan::find($id);
         return view('pelanggan.edit', compact('data'));
     }
 

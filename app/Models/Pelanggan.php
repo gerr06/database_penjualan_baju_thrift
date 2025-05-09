@@ -2,8 +2,13 @@
 
 namespace App\Models;
 
-class PelangganModel
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Pelanggan extends Model
 {
+    use HasFactory;
+
     // Fungsi dummy seolah mengambil dari database
     protected static function getDummyData()
     {
@@ -14,19 +19,13 @@ class PelangganModel
         ];
     }
 
-    public static function all()
+    public static function getAll()
     {
-        return self::getDummyData();
+        return Pelanggan::all();
     }
 
     public static function find($id)
     {
-        $pelanggan = self::getDummyData();
-        foreach ($pelanggan as $p) {
-            if ($p['id'] == $id) {
-                return $p;
-            }
-        }
-        return null;
+        return Pelanggan::where('id', $id)->first();
     }
 }
