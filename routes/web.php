@@ -38,3 +38,7 @@ Route::put('/pelanggan/{id}', [PelangganController::class, 'update'])->name('pel
 
 // Menghapus data pelanggan (dummy)
 Route::delete('/pelanggan/{id}', [PelangganController::class, 'destroy'])->name('pelanggan.destroy');
+
+Route::get('/pendaftaran-ThriftShop', function () {
+    return 'Selamat datang di halaman Pendaftaran Thrift Shop';
+})->middleware('check.age');
